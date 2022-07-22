@@ -14,7 +14,10 @@ def test_instructions_sets_one():
     robot = Robot(Direction.SOUTH, Position(0, 2))
     robot.move()
     robot.move()
-    assert robot.current_position == Position(0, 0) and robot.current_direction == Direction.SOUTH
+    assert (
+        robot.current_position == Position(0, 0)
+        and robot.current_direction == Direction.SOUTH
+    )
 
 
 def test_instructions_set_two():
@@ -25,7 +28,10 @@ def test_instructions_set_two():
     robot.move()
     robot.move()
     print(robot.current_position)
-    assert robot.current_position == Position(3, 4) and robot.current_direction == Direction.NORTH
+    assert (
+        robot.current_position == Position(3, 4)
+        and robot.current_direction == Direction.NORTH
+    )
 
 
 def test_instructions_set_three():
@@ -37,4 +43,7 @@ def test_instructions_set_three():
     robot.rotate(Rotation.LEFT)
     robot.move()
     robot.move()
-    assert robot.current_position == Position(1, 3) and robot.current_direction == Direction.WEST
+    assert (
+        robot.current_position == Position(1, 3)
+        and robot.current_direction == Direction.WEST
+    )
