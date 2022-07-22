@@ -108,5 +108,19 @@ There are more useful commands in the makefile
 ```
 
 ## Log files
-- under `bin/` sub-folder 
-- `toy-robot.log`
+- under project folder `toy-robot.log`
+
+### Sample input & output
+```bash
+▶ python3 -m src.bin.place_robot
+
+Please enter your instruction: <enter>
+place 0,1,north
+Please enter your instruction: <enter>
+move
+Please enter your instruction: <enter>
+report
+Output: 0,2,NORTH
+
+
+```

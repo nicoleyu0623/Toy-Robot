@@ -36,7 +36,7 @@ def main():
     robot = None
 
     while True:
-        instruction: str = input("Please enter your instruction: \n")
+        instruction: str = input("Please enter your instruction: \n").upper()
         LOGGER.info(f"instruction is: {instruction}")
 
         # initial valid input
