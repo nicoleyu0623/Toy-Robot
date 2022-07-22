@@ -2,16 +2,39 @@
 # @Original Author : Nicole Yu
 # @File : test_multi_instructions.py
 # @Project: AUTOMATION
+import pytest
+
+from src.allocation.domain.Robot import Robot
+from src.allocation.domain.Position import Position
+from src.allocation.domain.Direction import Direction
+from src.allocation.domain.Rotation import Rotation
 
 
-import re
+def test_instructions_sets_one():
+    robot = Robot(Direction.SOUTH, Position(0, 2))
+    robot.move()
+    robot.move()
+    assert robot.current_position == Position(0, 0) and robot.current_direction == Direction.SOUTH
 
-instruction = "PLACE 0,0,NORTH"
-first_valid_initial_position = instruction.split(" ")[1]
-first_valid_initial_position_regex = re.compile(
-    r"^[0-4],[0-4],[NORTH|WEST|EAST|SOUTH]*$"
-)
-int = first_valid_initial_position_regex.search(first_valid_initial_position)
 
-if int:
-    print("yes")
+def test_instructions_set_two():
+    robot = Robot(Direction.EAST, Position(1, 2))
+    robot.move()
+    robot.move()
+    robot.rotate(Rotation.LEFT)
+    robot.move()
+    robot.move()
+    print(robot.current_position)
+    assert robot.current_position == Position(3, 4) and robot.current_direction == Direction.NORTH
+
+
+def test_instructions_set_three():
+    robot = Robot(Direction.NORTH, Position(3, 1))
+    robot.move()
+    robot.move()
+    robot.rotate(Rotation.LEFT)
+    robot.rotate(Rotation.RIGHT)
+    robot.rotate(Rotation.LEFT)
+    robot.move()
+    robot.move()
+    assert robot.current_position == Position(1, 3) and robot.current_direction == Direction.WEST
