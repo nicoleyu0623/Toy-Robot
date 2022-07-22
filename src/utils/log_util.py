@@ -65,5 +65,5 @@ class LogUtils(object):
         return logger
 
 
-LOGGER = LogUtils.get_stream_logger()
-# LOGGER = LogUtils.get_rotating_file_logger(logger_name='toy-robot-logger', filename='toy-robot.log')
+# LOGGER = LogUtils.get_stream_logger()
+LOGGER = LogUtils.get_rotating_file_logger(logger_name='toy-robot-logger', filename='toy-robot.log')

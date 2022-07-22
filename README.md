@@ -57,3 +57,56 @@ pytest tests/e2e
 ## Makefile
 
 There are more useful commands in the makefile
+
+
+
+### Folder Structure
+```bash
+├── Dockerfile
+├── LICENSE
+├── Makefile
+├── README.md
+├── Toy-Robot-Code-Challenge-2022.pdf
+├── requirements.txt
+├── src
+│   ├── __init__.py
+│   ├── allocation
+│   │   ├── __init__.py
+│   │   ├── domain
+│   │   │   ├── Direction.py
+│   │   │   ├── Instructions.py
+│   │   │   ├── Position.py
+│   │   │   ├── Robot.py
+│   │   │   ├── Rotation.py
+│   │   │   ├── __init__.py
+│   │   ├── exceptions
+│   │   │   ├── OutOfRangeError.py
+│   │   │   ├── __init__.py
+│   │   └── validations
+│   │       ├── __init__.py
+│   │       └── verify.py
+│   ├── bin
+│   │   ├── __init__.py
+│   │   └── place_robot.py
+│   └── utils
+│       ├── __init__.py
+│       └── log_util.py
+└── tests
+    ├── __init__.py
+    ├── e2e
+    │   └── test_final_reports.py
+    ├── exceptions
+    │   └── test_exceptions.py
+    ├── integration
+    │   └── test_multi_instructions.py
+    ├── unit
+    │   ├── test_move.py
+    │   ├── test_robot.py
+    │   └── test_rotation.py
+    └── validations
+         └── test_validations.py
+```
+
+## Log files
+- under `bin/` sub-folder 
+- `toy-robot.log`
